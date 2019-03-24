@@ -1,0 +1,156 @@
+body.theme-light {
+    background-color: white;
+}
+
+body.theme-dark {
+    background-color: #242F3E;
+}
+
+.chart canvas {
+    display: block;
+    margin: auto;
+    user-select: none;
+}
+
+.chart .canvas-slider {
+  cursor: pointer;
+}
+
+.chart-data-selection {
+    margin: 50px auto;
+    width: 400px;
+}
+
+.data-selector {
+    /* display: inline;
+    margin: 10px;
+    padding: 5px 8px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgray;
+    border-radius: 15px;
+    background-color: rgb(250,250,250);
+    cursor: pointer;
+    user-select: none; */
+}
+
+.data-selector input {
+    cursor: pointer;
+}
+
+#mode-switcher {
+    margin: 25px auto;
+    width: 200px;
+    font: 18px sans-serif;
+    cursor: pointer;
+    user-select: none;
+}
+
+#mode-switcher.theme-light {
+  color: #108BE3;
+}
+
+#mode-switcher.theme-dark {
+  color: #36A8F1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.round {
+  position: relative;
+  border: 1px gray solid;
+  border-radius: 50px;
+  padding: 10px;
+  width: fit-content;
+
+  display: flex;
+}
+
+.round label {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 28px;
+  position: absolute;
+  left: 5px;
+  /* top: 7px; */
+  top: 4px;
+  width: 28px;
+}
+
+.round label:after {
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+  content: "";
+  height: 6px;
+  left: 7px;
+  opacity: 0;
+  position: absolute;
+  top: 8px;
+  transform: rotate(-45deg);
+  width: 12px;
+}
+
+.round input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.round input[type="checkbox"]:checked + label {
+  background-color: #66bb6a;
+  border-color: #66bb6a;
+}
+
+.round input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+}
+.checkbox_text {
+	margin-left: 10px;
+}
+body {
+  background-color: #f1f2f3;
+}
+
+
+
+
+
+.button-container {
+  margin: 10px 20px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox_text {
+  font: 16px sans-serif;
+  padding-left: 4px;
+  padding-right: 8px;
+
+}
+
+.checkbox_text.theme-light {
+  color: #43484B;
+}
+
+.checkbox_text.theme-dark {
+  color: #E8ECEE;
+}
+
+
