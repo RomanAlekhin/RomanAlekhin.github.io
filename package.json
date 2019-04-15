@@ -1,0 +1,25 @@
+{
+  "name": "chartsapp",
+  "version": "1.0.0",
+  "description": "Application for charts rendering",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "webpack",
+    "eslint": "eslint",
+    "start:dev": "webpack-dev-server"
+  },
+  "author": "Roman Alekhin",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "babel-loader": "^8.0.5",
+    "eslint": "^5.15.2",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1"
+  }
+}
