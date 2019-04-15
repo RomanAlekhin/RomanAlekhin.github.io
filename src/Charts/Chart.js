@@ -29,7 +29,6 @@ export default class Chart {
         this.zoomer = node.querySelector('.zoom');
         if (this.zoomer) {
             this.zoomer.onclick = () => {
-                debugger
                 if (!this.isZoomed) {
                     const tick = this.mainWindow.dataRenderer.selectedTick || this.slider.getSelectedTicks().endTick;
                     this.enterZoomedMode(this.data.axisDataset.values[tick]);
