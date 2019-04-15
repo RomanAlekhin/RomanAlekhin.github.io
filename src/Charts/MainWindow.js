@@ -36,16 +36,6 @@ export default class MainWindow {
         this.popup = chart.node.querySelector('.popup');
         this.popupFixed = false;
 
-        this.popup.onclick = (e) => {
-            if (!this.chart.isZoomed) {
-                const tick = this.dataRenderer.selectedTick || this.chart.slider.getSelectedTicks().endTick;
-                this.chart.enterZoomedMode(this.data.axisDataset.values[tick]);
-            } else {
-                this.chart.exitZoomedMode();
-            }
-            this.hidePopup();
-        };
-
         const getSelTick = (clientX, clientY) => {
             let tickIndex = this.chartArea.getTickIndexFromClientXOverCanvas(clientX);
             // const { start, end } = chart.slider.getSelectedTicks();
@@ -148,25 +138,7 @@ export default class MainWindow {
         const ctx = this.canvas.getContext('2d');
         ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-        if (this.chart.zoomAnimationFraction !== null) {
-            const { targSizing, initSizing } = this.chart.axisManager;
-            
-            const fraction = this.chart.zoomAnimationFraction;
-
-            this.chartArea.xScale = initSizing.xScale + (targSizing.xScale - initSizing.xScale) * fraction;
-            // this.chartArea.yScale = initSizing.yScale + (targSizing.yScale - initSizing.yScale) * fraction;
-            this.chartArea.xOffset = initSizing.xOffset + (targSizing.xOffset - initSizing.xOffset) * fraction;
-            // this.chartArea.xOffset = initSizing.xOffset + (targSizing.xOffset - initSizing.xOffset) * fraction;
-            // this.chartArea.yOffset = initSizing.yOffset + (targSizing.yOffset - initSizing.yOffset) * fraction;
-
-            if (this.chart.axisManager.altChartArea) {
-                const { targSizingAlt, initSizingAlt } = this.chart.axisManager;
-                this.chart.axisManager.altChartArea.xScale = initSizingAlt.xScale + (targSizingAlt.xScale - initSizingAlt.xScale) * fraction;
-            }
-        }
-
-
-        if (this.chart.zoomAnimationFraction === null) this.chart.axisManager.resizeChartAreas();
+        this.chart.axisManager.resizeChartAreas();
 
 
         const { startTick, endTick } = this.chart.slider.getSelectedTicks();
@@ -178,18 +150,10 @@ export default class MainWindow {
 
         const mode = window.app.modeSwitcher.getMode();
 
-        if (!this.chart.isZoomed) {
-            ctx.fillStyle = mode === 'day' ? '#000000' : '#FFFFFF';
-            ctx.font = `bold ${window.devicePixelRatio >= 2 ? 24 : 16}px Arial`;
-            ctx.fillText(this.chart.name, 5, 18);
-        } else {
-            ctx.fillStyle = mode === 'day' ? '#108BE3' : '#48AAF0';
-            ctx.font = '14 px Arial';
-            ctx.fillText('press on popup to', 5, 18);
-            ctx.fillText('exit zoom mode', 5, 36);
-        }
-
         ctx.fillStyle = mode === 'day' ? '#000000' : '#FFFFFF';
+        ctx.font = `bold ${window.devicePixelRatio >= 2 ? 24 : 16}px Arial`;
+        ctx.fillText(this.chart.name, 5, 18);
+
         const selectedDates = !this.chart.isZoomed
             ? `${getFullDate(this.data.axisDataset.values[startTick])} - ${getFullDate(this.data.axisDataset.values[endTick])}`
             : `${getFullDateWithDayOfWeek(this.data.axisDataset.values[(this.dataRenderer.selectedTick
@@ -201,12 +165,6 @@ export default class MainWindow {
 
         if (this.popupFixed && this.dataRenderer.selectedTickAnim !== null) {
             this.rerenderPopupValues(Math.round(this.dataRenderer.selectedTick));
-        }
-
-        if (this.chart.zoomOutAnimationFraction !== null) {
-            ctx.fillStyle = mode === 'day' ? '#FFFFFF' : '#242F3E';
-            ctx.globalAlpha = 1 - this.chart.zoomOutAnimationFraction;
-            ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
         }
     }
 

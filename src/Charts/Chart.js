@@ -16,8 +16,6 @@ export default class Chart {
 
         this.relatedDataId = relatedDataId;
         this.isZoomed = false;
-        this.zoomAnimationFraction = null;
-        this.zoomOutAnimationFraction = null;
 
         this.animator = new Animator(this);
         this.mainWindow = new MainWindow(this);
@@ -27,6 +25,20 @@ export default class Chart {
 
         if (!chartType.sliderEnabled) this.slider.disable();
         if (!chartType.buttonsEnabled) this.dataButtons.disable();
+
+        this.zoomer = node.querySelector('.zoom');
+        if (this.zoomer) {
+            this.zoomer.onclick = () => {
+                debugger
+                if (!this.isZoomed) {
+                    const tick = this.mainWindow.dataRenderer.selectedTick || this.slider.getSelectedTicks().endTick;
+                    this.enterZoomedMode(this.data.axisDataset.values[tick]);
+                    this.mainWindow.hidePopup();
+                } else {
+                    this.exitZoomedMode();
+                }
+            };
+        }
 
         this.onAdjustToScreen();
     }
@@ -118,49 +130,17 @@ export default class Chart {
     enterZoomedMode(timestamp) {
         this.overviewData = this.data;
 
-        // debugger
         window.app.dataProvider.loadDetailedData(this.relatedDataId, timestamp)
             .then((data) => {
-                // debugger
-                // this.isZoomed = true;
-                this.startZoomInAnim(data);
+                this.zoomer.innerHTML = 'zoom out';
+                this.isZoomed = true;
+                this.attachData(data);
             });
     }
 
     exitZoomedMode() {
-        this.startZoomOutAnim();
-        
-    }
-
-    startZoomInAnim(data) {
-        this.zoomAnimationFraction = 0;
-        // const ctx = this.mainWindow.canvas.getContext('2d');
-        // ctx.save();
-
-        this.axisManager.calcZoomInAnimValues();
-
-        this.animator.startAnimation('zoom', (newValue) => {
-            this.zoomAnimationFraction = newValue;
-        }, 0, 1, 1000, true, true, () => {
-            this.zoomAnimationFraction = null;
-            this.isZoomed = true;
-
-            this.attachData(data);
-        });
-    }
-
-    startZoomOutAnim() {
-        this.zoomOutAnimationFraction = 0;
         this.isZoomed = false;
-
+        this.zoomer.innerHTML = 'zoom in';
         this.attachData(this.overviewData);
-
-        this.animator.startAnimation('zoom', (newValue) => {
-            this.zoomOutAnimationFraction = newValue;
-        }, 0, 1, 500, true, true, () => {
-
-            this.zoomOutAnimationFraction = null;
-            
-        });
     }
 }

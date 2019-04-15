@@ -34,7 +34,6 @@ export const renderBars = (context, chartArea, dataset, startTick, endTick, sele
         context.fillRect(position.x1, position.y, position.x2 - position.x1, position.height);
 
         // Adjust x coordinate.
-        if (prevBarEndX !== position.x1) debugger
         // position.x1 = prevBarEndX;
         prevBarEndX = position.x2;
     }
@@ -53,7 +52,6 @@ export const renderStacked = (context, chartArea, valueDatasets, cache, startTic
         const position = chartArea.getCanvasPositionForStackedValues_BARS(i, cache[i]);
 
         // TODO - Adjust x coordinate.
-        if (prevBarEndX !== position.x1) debugger
         // position.x1 = prevBarEndX;
         prevBarEndX = position.x2;
 

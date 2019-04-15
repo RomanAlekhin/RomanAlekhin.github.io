@@ -117,10 +117,7 @@ export default class AxisManager {
     resizeChartAreas() {
         this.chartArea.updateSizing({ min: this.renderedMinMax.min, max: this.renderedMinMax.max },
             this.chart.slider.selection);
-
-        // debugger
         if (this.data.options.doubleAxis) {
-            // debugger
             this.altChartArea.updateSizing({ min: this.altRenderedMinMax.min, max: this.altRenderedMinMax.max },
                 this.chart.slider.selection);
         }
@@ -153,7 +150,6 @@ export default class AxisManager {
     }
 
     renderAxes() {
-        // debugger
         const { doubleAxis, percentage } = this.data.options;
 
         renderAxes(this.axes, this.chart.mainWindow.canvas, this.chartArea, percentage,
