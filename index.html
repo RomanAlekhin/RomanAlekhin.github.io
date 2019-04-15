@@ -3,44 +3,64 @@
 <html lang='en'>
     <head>
         <meta charset='UTF-8'>
+        <meta name='viewport'
+              content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover'>
+        <meta name='apple-mobile-web-app-capable' content='yes'>
+        <link rel='icon' href='favicon_Red.ico' type='image/gif' sizes='32x32'>
         <title>Charts App</title>
         <link rel='stylesheet' href='index.css'>
     </head>
-    <body>
-        <!-- <h1>Followers</h1> -->
+    <body class='theme theme-light'>
+        <div class='charts-container'>
+            <div id='chart1' class='chart theme theme-light'>
+                <canvas class='canvas-main-window' width='500' height='500'></canvas>
+                <canvas class='canvas-slider' width='500' height='70'></canvas>
+                <div class='chart-data-selection'></div>
+                <div class='popup theme theme-light noEvents' style='display: none;'><div class='title'></div><div class='data'></div></div>
+            </div>
+
+            <div id='chart2' class='chart theme theme-light'>
+                <canvas class='canvas-main-window' width='500' height='500'></canvas>
+                <canvas class='canvas-slider' width='500' height='50'></canvas>
+                <div class='chart-data-selection'></div>
+                <div class='popup theme theme-light noEvents' style='display: none;'><div class='title'></div><div class='data'></div></div>
+            </div>
+
+            <div id='chart3' class='chart theme theme-light'>
+                <canvas class='canvas-main-window' width='500' height='500'></canvas>
+                <canvas class='canvas-slider' width='500' height='50'></canvas>
+                <div class='chart-data-selection'></div>
+                <div class='popup theme theme-light noEvents' style='display: none;'><div class='title'></div><div class='data'></div></div>
+            </div>
+
+            <div id='chart4' class='chart theme theme-light'>
+                <canvas class='canvas-main-window' width='500' height='500'></canvas>
+                <canvas class='canvas-slider' width='500' height='50'></canvas>
+                <div class='chart-data-selection'></div>
+                <div class='popup theme theme-light noEvents' style='display: none;'><div class='title'></div><div class='data'></div></div>
+            </div>
+
+            <div id='chart5' class='chart theme theme-light'>
+                <canvas class='canvas-main-window' width='500' height='500'></canvas>
+                <canvas class='canvas-slider' width='500' height='50'></canvas>
+                <div class='chart-data-selection'></div>
+                <div class='popup theme theme-light noEvents' style='display: none;'><div class='title'></div><div class='data'></div></div>
+            </div>
+
+
+            <div id='chartPie' class='chart theme theme-light' style='display:none'>
+                <canvas class='canvas-main-window' width='500' height='500'></canvas>
+                <canvas class='canvas-slider' width='500' height='50'></canvas>
+                <div class='chart-data-selection'></div>
+                <div class='popup'><div class='title'></div><div class='data'></div></div>
+            </div>
+        </div>
+
         <div>
-            <div id='mode-switcher' class='theme-light'></button>
+            <div id='mode-switcher' class='theme theme-light'></div>
         </div>
 
-        <div id='chart1' class='chart theme-light'>
-            <canvas class='canvas-main-window' width='400' height='400'></canvas>
-            <canvas class='canvas-slider' width='400' height='50'></canvas>
-            <div class='chart-data-selection'></div>
-        </div>
 
-        <div id='chart2' class='chart theme-light'>
-            <canvas class='canvas-main-window' width='400' height='400'></canvas>
-            <canvas class='canvas-slider' width='400' height='50'></canvas>
-            <div class='chart-data-selection'></div>
-        </div>
-
-        <div id='chart3' class='chart theme-light'>
-            <canvas class='canvas-main-window' width='400' height='400'></canvas>
-            <canvas class='canvas-slider' width='400' height='50'></canvas>
-            <div class='chart-data-selection'></div>
-        </div>
-
-        <div id='chart4' class='chart theme-light'>
-            <canvas class='canvas-main-window' width='400' height='400'></canvas>
-            <canvas class='canvas-slider' width='400' height='50'></canvas>
-            <div class='chart-data-selection'></div>
-        </div>
-
-        <div id='chart5' class='chart theme-light'>
-            <canvas class='canvas-main-window' width='400' height='400'></canvas>
-            <canvas class='canvas-slider' width='400' height='50'></canvas>
-            <div class='chart-data-selection'></div>
-        </div>
 
         <script src='./dist/build.js'></script>
     </body>

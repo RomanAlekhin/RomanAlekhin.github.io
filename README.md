@@ -1,1 +1,0 @@
-Charts App for contest
