@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'caveStory';
+    src: url('assets/fonts/Cave-Story.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'caveStory';
+    src: url('assets/fonts/Cave-Story.eot'); /* IE9 Compat Modes */
+    src: url('assets/fonts/Cave-Story.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('assets/fonts/Cave-Story.woff2') format('woff2'), /* Super Modern Browsers */
+         url('assets/fonts/Cave-Story.woff') format('woff'), /* Pretty Modern Browsers */
+         url('assets/fonts/Cave-Story.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('assets/fonts/Cave-Story.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+body {
+    margin: 0;
+    background: #000;
+}
+canvas {
+    margin: 0 auto;
+    /*margin-top: calc(50%  - 380px);*/
+    position: absolute;
+    top: calc(50%  - 380px);
+    left: calc(50%  - 640px)
+}
+.hidden {
+    font-family: 'caveStory', sans-serif;
+    font-size: 0;
+    font-weight: normal;
+    font-style: normal;
+}
