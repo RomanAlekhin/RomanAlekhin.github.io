@@ -51,7 +51,7 @@ export const texturesPaths = {
     // 'orangeRocks': { path: 'assets/CircleTextures/TEXTURES/B1B0I800.BMP' },
     // 'grayRocks': { path: 'assets/CircleTextures/TEXTURES/S300M802.BMP' },
     // 'bricks': { path: 'assets/CircleTextures/TEXTURES/S4S0I811.BMP' },
-    'bricks': { path: 'assets/texture.BMP' },
+    'bricks': { path: 'assets/texture.png' },
 
     // Special effects.
     'meleeEffect': { path: 'assets/melee.png' },
