@@ -6936,7 +6936,7 @@ var texturesConfig = exports.texturesConfig = {
     // 'orangeRocks': { path: 'assets/CircleTextures/TEXTURES/B1B0I800.BMP' },
     // 'grayRocks': { path: 'assets/CircleTextures/TEXTURES/S300M802.BMP' },
     // 'bricks': { path: 'assets/CircleTextures/TEXTURES/S4S0I811.BMP' },
-    'bricks': { path: 'assets/texture.BMP' },
+    'bricks': { path: 'assets/texture.png' },
 
     // DEMO PROJECT.
     'marine': { path: 'assets/demo-marine.png', scale: { x: 0.4, y: 0.4 }, anchor: { x: 0.358, y: 0.472 } },
