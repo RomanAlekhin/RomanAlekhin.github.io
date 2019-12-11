@@ -150,7 +150,7 @@
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 400);
+/******/ 	return __webpack_require__(__webpack_require__.s = 404);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -163,8 +163,8 @@
   \*******************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["Phaser"] = __webpack_require__(/*! -!./phaser-split.js */ 396);
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../../webpack/buildin/global.js */ 55)))
+/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["Phaser"] = __webpack_require__(/*! -!./phaser-split.js */ 400);
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../../webpack/buildin/global.js */ 56)))
 
 /***/ }),
 
@@ -176,8 +176,8 @@
   \***********************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["PIXI"] = __webpack_require__(/*! -!./pixi.js */ 397);
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../../webpack/buildin/global.js */ 55)))
+/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["PIXI"] = __webpack_require__(/*! -!./pixi.js */ 401);
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../../webpack/buildin/global.js */ 56)))
 
 /***/ }),
 
@@ -189,8 +189,8 @@
   \*********************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["p2"] = __webpack_require__(/*! -!./p2.js */ 395);
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../../webpack/buildin/global.js */ 55)))
+/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["p2"] = __webpack_require__(/*! -!./p2.js */ 399);
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../../webpack/buildin/global.js */ 56)))
 
 /***/ }),
 
@@ -224,7 +224,7 @@ g,0<d.length&&(d=za[d[0]])&&(a.c[e]=d))}a.c[e]||(d=za[e])&&(a.c[e]=d);for(d=0;d<
 
 /***/ }),
 
-/***/ 395:
+/***/ 399:
 /* no static exports found */
 /* all exports used */
 /*!*************************************!*\
@@ -13848,7 +13848,7 @@ World.prototype.raycast = function(result, ray){
 
 /***/ }),
 
-/***/ 396:
+/***/ 400:
 /* no static exports found */
 /* all exports used */
 /*!***********************************************!*\
@@ -94217,11 +94217,11 @@ PIXI.TextureSilentFail = true;
 * "What matters in this life is not what we do but what we do for others, the legacy we leave and the imprint we make." - Eric Meyer
 */
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../../process/browser.js */ 398)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../../process/browser.js */ 402)))
 
 /***/ }),
 
-/***/ 397:
+/***/ 401:
 /* no static exports found */
 /* all exports used */
 /*!***************************************!*\
@@ -103353,7 +103353,7 @@ Object.defineProperty(PIXI.TilingSprite.prototype, 'height', {
 
 /***/ }),
 
-/***/ 398:
+/***/ 402:
 /* no static exports found */
 /* all exports used */
 /*!******************************!*\
@@ -103549,7 +103549,7 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
-/***/ 400:
+/***/ 404:
 /* no static exports found */
 /* all exports used */
 /*!******************************************!*\
@@ -103565,7 +103565,7 @@ module.exports = __webpack_require__(/*! webfontloader */104);
 
 /***/ }),
 
-/***/ 55:
+/***/ 56:
 /* no static exports found */
 /* all exports used */
 /*!***********************************!*\
